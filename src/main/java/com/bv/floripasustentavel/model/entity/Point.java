@@ -3,11 +3,14 @@ package com.bv.floripasustentavel.model.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import java.util.Date;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -42,11 +45,16 @@ public class Point {
     private String longitude;
     
     @Column(name = "Opening_Hours")
-    private Date openingHours;
+    private String openingHours;
     
     @Column(name = "Phone")
     private String phone;
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "Neighborhood_Id")
+    private Neighborhood neighborhoods;
 
+    
     
     
     

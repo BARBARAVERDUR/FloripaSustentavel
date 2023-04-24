@@ -3,7 +3,6 @@ package com.bv.floripasustentavel.model.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Entity;
-import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,7 +20,7 @@ public class PointResponseDto {
     
     private String address;
     
-    private Date openingHours;
+    private String openingHours;
     
     private String phone;
 }

@@ -28,7 +28,7 @@ public class City {
     @Column(name="City_Name")
     private String cityName;
     
-    @OneToMany
+    @OneToMany(mappedBy = "city")
     @Column(name="Region_Id")
     private Region region;
        
